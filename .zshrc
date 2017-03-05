@@ -103,3 +103,6 @@ alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm 
 alias uzall='sh /media/removable/SD16GB/.downloader/unzipAll.sh'
 alias urall='sh /media/removable/SD16GB/.downloader/unrarAll.sh'
 alias ranger='python ~/.ranger-1.7.2/ranger.py'
+
+# Plugin
+source ~/.zsh/zsh-syntax-highlighting-master/zsh-syntax-highlighting.zsh
