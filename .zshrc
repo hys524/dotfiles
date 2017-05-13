@@ -14,6 +14,9 @@ setopt correct
 autoload -U colors
 colors
 
+# Vim mode
+bindkey -v
+
 # Prompt
 autoload -U promptinit
 promptinit
@@ -25,11 +28,17 @@ ${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_col
 ${bg[red]}%n${reset_color} ${bg[red]}%m${reset_color} ${bg[red]}%D${reset_color} ${bg[red]}%*${reset_color} ${bg[red]}%d${reset_color}
 %# "
 
+# RPrompt for Vim-mode
+# VIMODE='[i]'
+# function zle-keymap-select {
+#     VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
+#     zle reset-prompt
+# }
+# zle -N zle-keymap-select
+# RPROMPT="${VIMODE}"
+
 # UTF-8
 export LANG=ja_JP.UTF-8
-
-# Vim mode
-bindkey -v
 
 # History
 HISTFILE=${HOME}/.zsh_history
@@ -54,7 +63,7 @@ PATH="$PATH:~/.local/share/umake/bin"
 PATH="$PATH:~/Dropbox/Ubuntu/platform-tools"
 
 # Clean up
-trash-empty 3
+trash-empty 14
 
 # Dropbox start
 dropbox start
@@ -68,25 +77,20 @@ hash -d sdd=/media/removable/SD16GB
 alias ls='ls -pA --color=auto --group-directories-first'
 alias ll="ls -lAFG --color=auto --group-directories-first --block-size=\'1"
 alias llh='ll -h'
-# alias lll='sudo enter-chroot'
-# alias lll='enter-chroot'
-# alias llll='sudo startxfce4'
-alias llll='startxfce4'
-# alias k='cd ..; ls'
 alias k='cd ..'
 alias kk='cd -'
 alias cp='cp -vi'
 alias mv='mv -vi'
 alias rm='rm -v'
-alias sd='cd /media/removable/SD16GB/ && ll'
-alias dl='cd ~/Downloads/ && ll'
+alias sd='pushd /media/removable/SD16GB/ && ll'
+alias dl='pushd ~/Downloads/ && ll'
+alias db='pushd ~/Dropbox/ && ll'
 alias jpg='find -not -name "*.jpg"'
-alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
 alias png='find -not -name "*.png"'
+alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
 alias png2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.png" -print'
-alias apt='sudo apt-get'
-alias upgrade='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoclean && sudo apt-get check'
-alias tree='tree --dirsfirst'
+alias upgrade='sudo apt update && sudo apt upgrade && sudo snap refresh'
+alias tree='tree -a --dirsfirst'
 alias e='exit'
 alias t='trash-put -v'
 alias u='unar'
@@ -100,9 +104,13 @@ alias snote='pushd ~/Dropbox/Simplenote && ll && ls'
 alias bashh='cat ~/Downloads/.downloader/bash_cheat_sheet.txt'
 alias b2c='croutoncycle cros'
 alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm *.png;ls'
-alias uzall='sh /media/removable/SD16GB/.downloader/unzipAll.sh'
-alias urall='sh /media/removable/SD16GB/.downloader/unrarAll.sh'
-alias ranger='python ~/.ranger-1.7.2/ranger.py'
+alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
+alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
+
+# Key Binding
+bindkey -M viins 'jj' vi-cmd-mode
+bindkey -M vicmd ' h' beginning-of-line
+bindkey -M vicmd ' l' end-of-line
 
 # Plugin
-source ~/.zsh/zsh-syntax-highlighting-master/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

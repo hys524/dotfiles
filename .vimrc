@@ -26,13 +26,12 @@ set history=100
 colorscheme molokai
 syntax on
 filetype plugin indent on
-"nnoremap ; :
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
 let &t_EI = "\<Esc>]50;CursorShape=0\x7" 
 
-"無名レジスタに入るヤンクデータを*レジスタにも入れる
+" 無名レジスタに入るヤンクデータを*レジスタにも入れる
+"set clipboard=unnamedplus
 set clipboard=unnamed
-set clipboard=unnamedplus
 
 " <Space><Space> -> <Space>解除
 nnoremap <Space><Space> <ESC>
@@ -74,6 +73,15 @@ nnoremap q @
 " Enter -> 改行
 nnoremap <Enter> o<Esc>
 
+" jj -> Esc
+inoremap jj <Esc>
+
+" ; <-> :
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 " 画面スクロールしてもカレット表示位置を動かさない
 nnoremap <C-e> j<C-e>
 nnoremap <C-y> k<C-y>
@@ -99,5 +107,3 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 " カーソル移動 <- Tab
 inoremap <C-l> <Right>
-
-" source C:\Users\egmainex\_vsvimrc
