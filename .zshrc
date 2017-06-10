@@ -20,22 +20,10 @@ bindkey -v
 # Prompt
 autoload -U promptinit
 promptinit
-# .bashrc -> PS1='\[\e[47m\]________\[\e[m\] \[\e[41m\]\t\[\e[m\] \[\e[44m\]\u\[\e[m\]\n\[\e[m\]\[\e[1;35m\]\w\[\e[m\] \[\e[1;35m\]\$\[\e[m\] \[\e[0;37m\]'
-# PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%# "
-# ${bg[red]}%n %m${reset_color} ${bg[red]}%D %*${reset_color} ${bg[red]}%d${reset_color}
 PROMPT="
 ${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}
 ${bg[red]}%n${reset_color} ${bg[red]}%m${reset_color} ${bg[red]}%D${reset_color} ${bg[red]}%*${reset_color} ${bg[red]}%d${reset_color}
 %# "
-
-# RPrompt for Vim-mode
-# VIMODE='[i]'
-# function zle-keymap-select {
-#     VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
-#     zle reset-prompt
-# }
-# zle -N zle-keymap-select
-# RPROMPT="${VIMODE}"
 
 # UTF-8
 export LANG=ja_JP.UTF-8
@@ -65,13 +53,21 @@ PATH="$PATH:~/Dropbox/Ubuntu/platform-tools"
 # Clean up
 trash-empty 14
 
-# Dropbox start
-dropbox start
+# Key Binding
+bindkey -M viins 'jj' vi-cmd-mode
+bindkey -M vicmd ' h' beginning-of-line
+bindkey -M vicmd ' l' end-of-line
+
+# VCS
+setopt prompt_subst
+autoload -Uz vcs_info
 
 # Alias for Directory
+setopt autonamedirs
 setopt CDABLE_VARS
-hash -d dld=~/Downloads
-hash -d sdd=/media/removable/SD16GB
+hash -d dl-=~/Downloads/
+hash -d db-=~/Dropbox/
+hash -d gb-=~/GoogleDrive/
 
 # Alias
 alias ls='ls -pA --color=auto --group-directories-first'
@@ -82,9 +78,10 @@ alias kk='cd -'
 alias cp='cp -vi'
 alias mv='mv -vi'
 alias rm='rm -v'
-alias sd='pushd /media/removable/SD16GB/ && ll'
-alias dl='pushd ~/Downloads/ && ll'
-alias db='pushd ~/Dropbox/ && ll'
+alias sd='cd /media/removable/SD16GB/ && ll'
+alias dl='cd ~/Downloads/ && ll'
+alias db='cd ~/Dropbox/ && ll'
+alias gd='cd ~/GoogleDrive/ && ll'
 alias jpg='find -not -name "*.jpg"'
 alias png='find -not -name "*.png"'
 alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
@@ -107,10 +104,8 @@ alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm 
 alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 
-# Key Binding
-bindkey -M viins 'jj' vi-cmd-mode
-bindkey -M vicmd ' h' beginning-of-line
-bindkey -M vicmd ' l' end-of-line
-
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Dropbox start
+dropbox start
