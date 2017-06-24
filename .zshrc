@@ -65,9 +65,11 @@ autoload -Uz vcs_info
 # Alias for Directory
 setopt autonamedirs
 setopt CDABLE_VARS
-hash -d dl-=~/Downloads/
-hash -d db-=~/Dropbox/
-hash -d gb-=~/GoogleDrive/
+hash -d 0dl=~/Downloads/
+hash -d 0db=~/Dropbox/
+hash -d 0gb=~/GoogleDrive/
+hash -d 0hdd=/media/hys524/NEWHDD2TB1/
+hash -d 0oldhdd=/media/hys524/OLDHDD2TB1/
 
 # Alias
 alias ls='ls -pA --color=auto --group-directories-first'
@@ -75,6 +77,7 @@ alias ll="ls -lAFG --color=auto --group-directories-first --block-size=\'1"
 alias llh='ll -h'
 alias k='cd ..'
 alias kk='cd -'
+alias pwd='pwd && pwd -P'
 alias cp='cp -vi'
 alias mv='mv -vi'
 alias rm='rm -v'
@@ -82,8 +85,7 @@ alias sd='cd /media/removable/SD16GB/ && ll'
 alias dl='cd ~/Downloads/ && ll'
 alias db='cd ~/Dropbox/ && ll'
 alias gd='cd ~/GoogleDrive/ && ll'
-alias jpg='find -not -name "*.jpg"'
-alias png='find -not -name "*.png"'
+alias jpg='find . -not -name "*.jpg" -a -not -name "*.jpeg" -a -not -name "*.JPG" -a -not -name "*.Jpeg" -a -not -name "*.JPEG" -a -not -name "*.png" -a -not -name "*.PNG" -type f'
 alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
 alias png2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.png" -print'
 alias upgrade='sudo apt update && sudo apt upgrade && sudo snap refresh'
