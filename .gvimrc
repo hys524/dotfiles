@@ -1,5 +1,5 @@
-set lines=25
-set columns=90
+set lines=38
+set columns=204
 set cmdheight=1
 set encoding=utf-8
 set guioptions-=T

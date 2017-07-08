@@ -107,3 +107,14 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 " カーソル移動 <- Tab
 inoremap <C-l> <Right>
+
+" 削除した文字をレジスタに入れない
+nnoremap x "_x
+
+" 削除した文字をレジスタに入れる
+nnoremap X x
+
+" Vim-Plug
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-surround'
+call plug#end()
