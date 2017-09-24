@@ -45,21 +45,26 @@ ${alignc}${font migmix1p:style=Regular:size=12}${time %m/%d %A}${font}
 
 Uptime: $uptime
 Load average: $loadavg
+Processes: $processes Running: $running_processes
 
 RAM Usage: $mem/$memmax
 $membar
-
 Swap Usage: $swap/$swapmax
 $swapbar
 
-File systems: ${fs_used /}/${fs_size /}
+File systems SDD: ${fs_used /}/${fs_size /}
 ${fs_bar 6 /}
+File systems HDD1: ${fs_used /media/hys524/HDD2TB01/}/${fs_size /media/hys524/HDD2TB01/}
+${fs_bar 6 /media/hys524/HDD2TB01/}
+File systems HDD2: ${fs_used /media/hys524/HDD2TBOLD1/}/${fs_size /media/hys524/HDD2TBOLD1/}
+${fs_bar 6 /media/hys524/HDD2TBOLD1/}
+File systems HDD3: ${fs_used /media/hys524/0AD6-B5AA/}/${fs_size /media/hys524/0AD6-B5AA/}
+${fs_bar 6 /media/hys524/0AD6-B5AA/}
 
 ${if_existing /sys/class/power_supply/BAT0/status}Battery: ${battery}
  ${battery_time}
 ${battery_bar}
 ${endif}
-Processes: $processes Running: $running_processes
 
 Name               PID   CPU    MEM 
 ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
