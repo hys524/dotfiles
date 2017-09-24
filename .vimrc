@@ -71,7 +71,7 @@ nnoremap @ q
 nnoremap q @
 
 " Enter -> 改行
-nnoremap <Enter> o<Esc>
+nnoremap <Enter> <Enter>O<Esc>
 
 " jj -> Esc
 inoremap jj <Esc>
@@ -114,7 +114,11 @@ nnoremap x "_x
 " 削除した文字をレジスタに入れる
 nnoremap X x
 
+" 保存せずに終了
+nnoremap Zq ZQ
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 call plug#end()

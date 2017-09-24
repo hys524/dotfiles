@@ -22,7 +22,7 @@ autoload -U promptinit
 promptinit
 PROMPT="
 ${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}
-${bg[red]}%n${reset_color} ${bg[red]}%m${reset_color} ${bg[red]}%D${reset_color} ${bg[red]}%*${reset_color} ${bg[red]}%d${reset_color}
+${bg[green]}%n${reset_color} ${bg[green]}%m${reset_color} ${bg[green]}%D${reset_color} ${bg[green]}%*${reset_color} ${bg[green]}%d${reset_color}
 %# "
 
 # UTF-8
@@ -72,8 +72,8 @@ hash -d 0hdd=/media/hys524/NEWHDD2TB1/
 hash -d 0oldhdd=/media/hys524/OLDHDD2TB1/
 
 # Alias
-alias ls='ls -pA --color=auto --group-directories-first'
-alias ll="ls -lAFG --color=auto --group-directories-first --block-size=\'1"
+alias ls='ls -AFx --color=auto --group-directories-first'
+alias ll="ls -AFGl --color=auto --group-directories-first --block-size=\'1"
 alias llh='ll -h'
 alias k='cd ..'
 alias kk='cd -'
@@ -106,6 +106,12 @@ alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm 
 alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 alias ranger='python3 ~/ranger/ranger.py'
+alias dropboxStatus='~/Dropbox/Ubuntu/scripts/dropboxStatus.sh'
+alias gita='git add .'
+alias gitc='git commit'
+alias gitf='git fetch -pv'
+alias gitl='git log --graph'
+alias gits='git status'
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
