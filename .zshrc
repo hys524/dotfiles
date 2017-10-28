@@ -22,7 +22,7 @@ autoload -U promptinit
 promptinit
 PROMPT="
 ${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}
-${bg[green]}%n${reset_color} ${bg[green]}%m${reset_color} ${bg[green]}%D${reset_color} ${bg[green]}%*${reset_color} ${bg[green]}%d${reset_color}
+${bg[red]}%n${reset_color} ${bg[red]}%m${reset_color} ${bg[red]}%D${reset_color} ${bg[red]}%*${reset_color} ${bg[red]}%d${reset_color}
 %# "
 
 # UTF-8
@@ -88,14 +88,14 @@ alias gd='cd ~/GoogleDrive/ && ll'
 alias jpg='find . -not -name "*.jpg" -a -not -name "*.jpeg" -a -not -name "*.JPG" -a -not -name "*.Jpeg" -a -not -name "*.JPEG" -a -not -name "*.png" -a -not -name "*.PNG" -type f'
 alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
 alias png2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.png" -print'
-alias upgrade='sudo apt update && sudo apt upgrade && sudo snap refresh'
+alias upgrade='sudo rm /var/lib/dpkg/lock; sudo rm /var/lib/apt/lists/lock; sudo apt update && sudo apt upgrade && sudo snap refresh'
 alias tree='tree -a --dirsfirst'
 alias e='exit'
 alias t='trash-put -v'
 alias u='unar'
 alias jpddl='unar -p antijpddl'
 alias z='zip -0rmv'
-alias gdm='google-drive-ocamlfuse ~/GoogleDrive && pushd ~/GoogleDrive && ls'
+alias gdm='google-drive-ocamlfuse ~/GoogleDrive'
 alias gdu='fusermount -u ~/GoogleDrive'
 alias dbm='dropbox start && pushd ~/Dropbox && ls'
 alias dbu='dropbox stop'
@@ -112,9 +112,11 @@ alias gitc='git commit'
 alias gitf='git fetch -pv'
 alias gitl='git log --graph'
 alias gits='git status'
+alias op='xdg-open'
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Dropbox start
-dropbox start
+# dropbox start
+DBUS_SESSION_BUS_ADDRESS="" dropbox start
