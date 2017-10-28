@@ -116,6 +116,7 @@ alias op='xdg-open'
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-vimto/zsh-vimto.zsh
 
 # Dropbox start
 # dropbox start
