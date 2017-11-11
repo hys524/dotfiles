@@ -113,6 +113,10 @@ alias gitf='git fetch -pv'
 alias gitl='git log --graph'
 alias gits='git status'
 alias op='xdg-open'
+alias smbm='sh ~/Dropbox/Ubuntu/scripts/mountSMB.sh'
+alias smbu='sudo umount ~/Windows'
+alias sftpm='sh ~/Dropbox/Ubuntu/scripts/mountSFTP.sh'
+alias sftpu='fusermount -u ~/SFTP'
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
