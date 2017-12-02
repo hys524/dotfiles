@@ -61,10 +61,10 @@ ${fs_bar 6 /media/hys524/HDD2TBOLD1/}
 File systems HDD3: ${fs_used /media/hys524/0AD6-B5AA/}/${fs_size /media/hys524/0AD6-B5AA/}
 ${fs_bar 6 /media/hys524/0AD6-B5AA/}
 
-${if_existing /sys/class/power_supply/BAT0/status}Battery: ${battery}
- ${battery_time}
-${battery_bar}
-${endif}
+# ${if_existing /sys/class/power_supply/BAT0/status}Battery: ${battery}
+#  ${battery_time}
+# ${battery_bar}
+# ${endif}
 
 Name               PID   CPU    MEM 
 ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
