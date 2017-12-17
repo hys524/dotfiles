@@ -1,0 +1,23 @@
+urxvt.scrollBar: false
+urxvt.font: xft:Ricty-8
+
+! color
+urxvt.foreground: rgba:ffff/ffff/ffff/ffff
+urxvt.background: rgba:0000/0000/0000/0000
+
+! blue
+urxvt.color4: #5566ff
+urxvt.color12: #7799ff
+
+! UXTerm
+UXTerm*termName:          xterm-256color
+UXTerm*locale:            true
+UXTerm*selectToClipboard: true
+UXTerm*saveLines:         9999
+UXTerm*utf8:              1
+!UXTerm*faceName:          monospace
+!UXTerm*faceSize:          9
+UXTerm*cjkWidth:          true
+UXTerm*scrollBar:         false
+UXTerm*background:  #000000
+UXTerm*foreground:  #ffffff
