@@ -106,6 +106,7 @@ alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm 
 alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 alias ranger='python3 ~/ranger/ranger.py'
+alias rangerr='python3 ~/OSS/ranger/ranger.py'
 alias dropboxStatus='~/Dropbox/Ubuntu/scripts/dropboxStatus.sh'
 alias gita='git add .'
 alias gitc='git commit'
@@ -119,6 +120,7 @@ alias sftpm='sh ~/Dropbox/Ubuntu/scripts/mountSFTP.sh'
 alias sftpu='fusermount -u ~/SFTP'
 alias gkill='sudo gkill'
 alias nethogs='sudo nethogs'
+alias starti3='xiwi xinit &'
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
