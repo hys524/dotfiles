@@ -117,6 +117,9 @@ nnoremap X x
 " 保存せずに終了
 nnoremap Zq ZQ
 
+" 検索次候補でカーソルを画面中央に表示
+nnoremap n nzz
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
