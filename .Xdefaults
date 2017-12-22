@@ -3,7 +3,7 @@ urxvt.font: xft:Ricty-8
 
 ! color
 urxvt.foreground: rgba:ffff/ffff/ffff/ffff
-urxvt.background: rgba:0000/0000/0000/cccc
+urxvt.background: rgba:0000/0000/0000/aaaa
 
 ! blue
 urxvt.color4: #5566ff
