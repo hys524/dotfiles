@@ -107,7 +107,8 @@ alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 alias ranger='python3 ~/ranger/ranger.py'
 alias ran='python3 ~/OSS/ranger/ranger.py'
-alias dropboxStatus='~/Dropbox/Ubuntu/scripts/dropboxStatus.sh'
+alias dropboxStatus='~/Dropbox/Ubuntu/scripts/dropboxStatus.sh 10'
+alias dropboxRestart='dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start'
 alias gita='git add .'
 alias gitc='git commit'
 alias gitf='git fetch -pv'
@@ -122,10 +123,13 @@ alias gkill='sudo gkill'
 alias nethogs='sudo nethogs'
 alias starti3='xiwi xinit &'
 alias c='clear'
+alias screenshot='sh ~/Dropbox/Ubuntu/scripts/screenshotAll.sh'
+alias his='less -N ~/.zsh_history'
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-vimto/zsh-vimto.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Dropbox start
 # dropbox start

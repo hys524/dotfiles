@@ -116,9 +116,16 @@ nnoremap X x
 
 " 保存せずに終了
 nnoremap Zq ZQ
+cnoremap ;; q!
+
+" 保存して終了
+cnoremap ;' wq
 
 " 検索次候補でカーソルを画面中央に表示
 nnoremap n nzz
+
+" VimPlug更新コマンド
+cnoremap pi PlugInstall
 
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
