@@ -22,7 +22,7 @@ autoload -U promptinit
 promptinit
 PROMPT="
 ${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}
-${bg[red]}%n${reset_color} ${bg[red]}%m${reset_color} ${bg[red]}%D${reset_color} ${bg[red]}%*${reset_color} ${bg[red]}%d${reset_color}
+${bg[blue]}%n${reset_color} ${bg[blue]}%m${reset_color} ${bg[blue]}%D${reset_color} ${bg[blue]}%*${reset_color} ${bg[blue]}%d${reset_color}
 %# "
 
 # UTF-8
@@ -30,8 +30,8 @@ export LANG=ja_JP.UTF-8
 
 # History
 HISTFILE=${HOME}/.zsh_history
-HISTSIZE=1000
-SAVEHIST=10000
+HISTSIZE=9999
+SAVEHIST=9999
 setopt share_history
 
 # Big or Little
@@ -47,8 +47,9 @@ function chpwd(){ls -pA --color=auto --group-directories-first}
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
-PATH="$PATH:~/.local/share/umake/bin"
-PATH="$PATH:~/Dropbox/Ubuntu/platform-tools"
+PATH="$PATH:$HOME/Dropbox/Ubuntu/AppImages"
+PATH="$PATH:$HOME/Dropbox/Ubuntu/scripts"
+PATH="$PATH:$HOME/Dropbox/Ubuntu/bin"
 
 # Clean up
 trash-empty 14
@@ -77,6 +78,7 @@ alias ll="ls -AFGl --color=auto --group-directories-first --block-size=\'1"
 alias llh='ll -h'
 alias k='cd ..'
 alias kk='cd -'
+alias dc='cd -'
 alias pwd='pwd && pwd -P'
 alias cp='cp -vi'
 alias mv='mv -vi'
@@ -88,7 +90,7 @@ alias gd='cd ~/GoogleDrive/ && ll'
 alias jpg='find . -not -name "*.jpg" -a -not -name "*.jpeg" -a -not -name "*.JPG" -a -not -name "*.Jpeg" -a -not -name "*.JPEG" -a -not -name "*.png" -a -not -name "*.PNG" -type f'
 alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
 alias png2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.png" -print'
-alias upgrade='sudo rm /var/lib/dpkg/lock; sudo rm /var/lib/apt/lists/lock; sudo apt update && sudo apt upgrade && sudo snap refresh'
+alias upgrade='sudo rm /var/lib/dpkg/lock; sudo rm /var/lib/apt/lists/lock; sudo apt update && sudo apt upgrade && sudo snap refresh && brew update && brew upgrade && notify-send -t 0 -u normal "upgrade finish'
 alias tree='tree -a --dirsfirst'
 alias e='exit'
 alias t='trash-put -v'
@@ -105,7 +107,7 @@ alias b2c='croutoncycle cros'
 alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm *.png;ls'
 alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
-alias ranger='python3 ~/ranger/ranger.py'
+alias ranger='~/.linuxbrew/bin/ranger'
 alias ran='python3 ~/OSS/ranger/ranger.py'
 alias dropboxStatus='~/Dropbox/Ubuntu/scripts/dropboxStatus.sh 10'
 alias dropboxRestart='dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start'
@@ -114,6 +116,8 @@ alias gitc='git commit'
 alias gitf='git fetch -pv'
 alias gitl='git log --graph'
 alias gits='git status'
+alias tigr='tig refs'
+alias tigs='tig status'
 alias op='xdg-open'
 alias smbm='sh ~/Dropbox/Ubuntu/scripts/mountSMB.sh'
 alias smbu='sudo umount ~/Windows'
@@ -121,10 +125,15 @@ alias sftpm='sh ~/Dropbox/Ubuntu/scripts/mountSFTP.sh'
 alias sftpu='fusermount -u ~/SFTP'
 alias gkill='sudo gkill'
 alias nethogs='sudo nethogs'
-alias starti3='xiwi xinit &'
+alias starti3='xiwi -F xinit &'
 alias c='clear'
 alias screenshot='sh ~/Dropbox/Ubuntu/scripts/screenshotAll.sh'
 alias his='less -N ~/.zsh_history'
+
+# Linuxbrew
+PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+export MANPATH="$(brew --prefix)/share/man:$MANPATH"
+export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -132,5 +141,9 @@ source ~/.zsh/zsh-vimto/zsh-vimto.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Dropbox start
-# dropbox start
-DBUS_SESSION_BUS_ADDRESS="" dropbox start
+dropbox running  
+if [ $? -eq 0 ]; then  
+    dropbox start  
+else  
+    DBUS_SESSION_BUS_ADDRESS="" dropbox status  
+fi  

@@ -114,6 +114,9 @@ nnoremap x "_x
 " 削除した文字をレジスタに入れる
 nnoremap X x
 
+" 検索次候補でカーソルを画面中央に表示
+nnoremap n nzz
+
 " 保存せずに終了
 nnoremap Zq ZQ
 cnoremap ;; q!
@@ -121,8 +124,16 @@ cnoremap ;; q!
 " 保存して終了
 cnoremap ;' wq
 
-" 検索次候補でカーソルを画面中央に表示
-nnoremap n nzz
+" ファイルタイプ変更
+cnoremap ;md set filetype=markdown
+
+" 文字コード変更
+cnoremap ;enc e ++enc=uft-8,shift_jis,euc-jp
+cnoremap ;sjis e ++enc=shift_jis
+cnoremap ;utf e ++enc=utf-8
+
+" vimgrep
+cnoremap ;grep vimgrep ?? */ | cw
 
 " VimPlug更新コマンド
 cnoremap pi PlugInstall
