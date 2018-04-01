@@ -33,9 +33,10 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -e python3 ~/OSS/ranger/ranger.py
 
 # kill focused window
-bindsym $mod+Shift+q kill
+#bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 bindsym $mod+F4 kill
 # mouse middole button click
@@ -46,9 +47,10 @@ bindsym --release button2 kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --term=urxvt
-bindsym $mod+Shift+d exec --no-startup-id rofi -show window
+#bindsym $mod+d exec --no-startup-id rofi -modi combi -show combi -combi-modi window,drun,ssh
+bindsym $mod+d exec --no-startup-id ~/Dropbox/Ubuntu/scripts/rofi.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -88,12 +90,16 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout tabbed
 bindsym $mod+Shift+s layout stacking
 bindsym $mod+e layout toggle split
+#bindsym $mod+w layout tabbed
+#bindsym $mod+Shift+w layout stacked
+#bindsym $mod+e layout toggle split tabbed
+
 
 # toggle tiling / floating
 # bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+f floating toggle
 # mouse right button click
-bindsym button3 floating toggle
+bindsym button3 --release floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -130,11 +136,11 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -164,7 +170,7 @@ bindsym $mod+r mode "resize"
 # bindsym --release button5 resize set 1280px 720px
 
 # default window size
-floating_minimum_size 960 x 640
+floating_minimum_size 10 x 10
 floating_maximum_size -1 x -1
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -178,9 +184,12 @@ bar {
 # new_window pixel 1
 # new_window none
 # new_float none
+hide_edge_borders smart
+popup_during_fullscreen smart
+focus_on_window_activation smart
 
 # bindsym XF86Back exec croutoncycle cros
-bindsym Mod1+Tab exec croutoncycle cros
+bindsym $mod+Tab exec croutoncycle cros
 
 exec --no-startup-id fcitx
 exec --no-startup-id clipit
