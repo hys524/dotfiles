@@ -128,12 +128,12 @@ cnoremap ;' wq
 cnoremap ;md set filetype=markdown
 
 " 文字コード変更
-cnoremap ;enc e ++enc=uft-8,shift_jis,euc-jp
-cnoremap ;sjis e ++enc=shift_jis
 cnoremap ;utf e ++enc=utf-8
+cnoremap ;sjis e ++enc=shift_jis
+cnoremap ;e e ++enc=uft-8,shift_jis,euc-jp
 
 " vimgrep
-cnoremap ;grep vimgrep ?? */ | cw
+cnoremap ;g vimgrep ?? **/* \| cw
 
 " VimPlug更新コマンド
 cnoremap pi PlugInstall
