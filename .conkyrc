@@ -52,14 +52,12 @@ $membar
 Swap Usage: $swap/$swapmax
 $swapbar
 
-File systems SDD: ${fs_used /}/${fs_size /}
+SDD1(sda2): ${fs_used /}/${fs_size /}
 ${fs_bar 6 /}
-File systems HDD1: ${fs_used /media/hys524/HDD2TB01/}/${fs_size /media/hys524/HDD2TB01/}
-${fs_bar 6 /media/hys524/HDD2TB01/}
-File systems HDD2: ${fs_used /media/hys524/HDD2TBOLD1/}/${fs_size /media/hys524/HDD2TBOLD1/}
-${fs_bar 6 /media/hys524/HDD2TBOLD1/}
-File systems HDD3: ${fs_used /media/hys524/0AD6-B5AA/}/${fs_size /media/hys524/0AD6-B5AA/}
-${fs_bar 6 /media/hys524/0AD6-B5AA/}
+HDD1(sdb1): ${fs_used /home/hys524/HDD1/}/${fs_size /home/hys524/HDD1/}
+${fs_bar 6 /home/hys524/HDD1/}
+HDD2(sdc1): ${fs_used /home/hys524/HDD2/}/${fs_size /home/hys524/HDD2/}
+${fs_bar 6 /home/hys524/HDD2/}
 
 # ${if_existing /sys/class/power_supply/BAT0/status}Battery: ${battery}
 #  ${battery_time}
