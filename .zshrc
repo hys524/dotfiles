@@ -13,6 +13,7 @@ setopt correct
 # Colors
 autoload -U colors
 colors
+export TERM=xterm-256color
 
 # Vim mode
 bindkey -v
@@ -90,7 +91,9 @@ alias gd='cd ~/GoogleDrive/ && ll'
 alias jpg='find . -not -name "*.jpg" -a -not -name "*.jpeg" -a -not -name "*.JPG" -a -not -name "*.Jpeg" -a -not -name "*.JPEG" -a -not -name "*.png" -a -not -name "*.PNG" -type f'
 alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.jpg" -print'
 alias png2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.png" -print'
-alias upgrade='sudo rm /var/lib/dpkg/lock; sudo rm /var/lib/apt/lists/lock; sudo apt update && sudo apt upgrade && sudo snap refresh && brew update && brew upgrade && notify-send -t 0 -u normal "upgrade finish'
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias upgradeDesktop='sudo rm /var/lib/dpkg/lock; sudo rm /var/lib/apt/lists/lock; sudo apt update && sudo apt upgrade && sudo snap refresh'
+alias upgradeCrouton='sudo apt update && sudo apt upgrade && brew update && brew upgrade && notify-send -t 0 -u normal "upgrade finish"'
 alias tree='tree -a --dirsfirst'
 alias e='exit'
 alias t='trash-put -v'
@@ -123,11 +126,15 @@ alias smbm='sh ~/Dropbox/Ubuntu/scripts/mountSMB.sh'
 alias smbu='sudo umount ~/Windows'
 alias sftpm='sh ~/Dropbox/Ubuntu/scripts/mountSFTP.sh'
 alias sftpu='fusermount -u ~/SFTP'
+alias nasm='sh ~/Dropbox/Ubuntu/scripts/mountNAS.sh'
+alias nasu='fusermount -u ~/NAS'
 alias gkill='sudo gkill'
 alias nethogs='sudo nethogs'
 alias starti3='xiwi -F xinit &'
 alias c='clear'
 alias screenshot='sh ~/Dropbox/Ubuntu/scripts/screenshotAll.sh'
+alias less='/usr/share/vim/vim74/macros/less.sh'
+alias less2='/home/hys524/.linuxbrew/share/vim/vim80/macros/less.sh'
 alias his='less -N ~/.zsh_history'
 
 # Linuxbrew
