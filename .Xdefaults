@@ -1,31 +1,56 @@
+! urxvt`
 urxvt.scrollBar: false
 urxvt.font: xft:Ricty-8
 urxvt.saveLines: 9999
 urxvt.fading: 10
-
-! color
 urxvt.foreground: rgba:ffff/ffff/ffff/ffff
 urxvt.background: rgba:0000/0000/0000/aaaa
-
-! blue
 urxvt.color4: #5566ff
 urxvt.color12: #7799ff
-
-! perl extension
 URxvt.perl-ext-common: default,selection-to-clipboard
 
 
 
 
 ! UXTerm
-UXTerm*termName:          xterm-256color
-UXTerm*locale:            true
+UXTerm*termName: xterm-256color
+UXTerm*locale: true
 UXTerm*selectToClipboard: true
-UXTerm*saveLines:         9999
-UXTerm*utf8:              1
-!UXTerm*faceName:          monospace
-!UXTerm*faceSize:          9
-UXTerm*cjkWidth:          true
-UXTerm*scrollBar:         false
-UXTerm*background:  #000000
-UXTerm*foreground:  #ffffff
+UXTerm*saveLines: 9999
+UXTerm*utf8: 1
+!UXTerm*faceName: monospace
+!UXTerm*faceSize: 9
+UXTerm*cjkWidth: true
+UXTerm*scrollBar: false
+UXTerm*background: #000000
+UXTerm*foreground: #ffffff
+
+UXTerm*faceName: Ricty:style=Regular
+UXTerm*faceNameDoublesize: Ricty:style=Regular
+UXTerm*faceSize: 10
+!UXTerm*background: black
+!UXTerm*foreground: snow
+
+
+
+! rofi
+!rofi.modi: run,window,drun,ssh
+!rofi.combi-modi: window,drun
+!rofi.lines: 6
+rofi.font: Ricty:style=Regular 16
+!rofi.bw: 2
+!rofi.location: 0
+!rofi.padding: 5
+rofi.sidebar-mode: true
+rofi.hide-scrollbar: true
+rofi.fixed-num-lines: true
+!rofi.kb-row-up: Up,Control+p,Shift+Tab
+!rofi.kb-row-down: Down,Control+n
+!rofi.kb-cancel: Escape,Control+g,Control+bracketleft,Control+c
+!rofi.kb-mode-next: Shift+Right,Control+i,Control+Tab
+!rofi.kb-mode-previous: Shift+Left,Control+Shift+i
+rofi.color-enabled: true
+rofi.color-window: #3a4c54, #2a373e, #c3c6c8
+rofi.color-normal: #455a64, #fafbfc, #455a64, #00bcd4, #fafbfc
+rofi.color-active: #455a64, #00bcd4, #455a64, #009688, #fdf6e3
+rofi.color-urgent: #455a64, #ff5252, #455a64, #ff5252, #fdf6e3
