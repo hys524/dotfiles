@@ -9,6 +9,7 @@ setopt magic_equal_subst
 setopt print_eight_bit
 setopt globdots
 setopt correct
+setopt globdots
 
 # Colors
 autoload -U colors
@@ -107,7 +108,6 @@ alias dbu='dropbox stop'
 alias snote='pushd ~/Dropbox/Simplenote && ll && ls'
 alias bashh='cat ~/Downloads/.downloader/bash_cheat_sheet.txt'
 alias b2c='croutoncycle cros'
-alias bookwalker='convert *.png -crop '1200x1720+0+100' -quality 95 %03d.jpg;rm *.png;ls'
 alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 alias ranger='~/.linuxbrew/bin/ranger'
@@ -154,3 +154,16 @@ if [ $? -eq 0 ]; then
 else  
     DBUS_SESSION_BUS_ADDRESS="" dropbox status  
 fi  
+
+# Cursor Change by Vim-mode
+#zle-keymap-select () {
+#    if [ "$TERM" = "xterm-256color" ]; then
+#        if [ $KEYMAP = vicmd ]; then
+#            # the command mode for vi
+#            echo -ne "\e[2 q"
+#        else
+#            # the insert mode for vi
+#            echo -ne "\e[5 q"
+#        fi
+#    fi
+#}

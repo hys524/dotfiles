@@ -27,7 +27,7 @@ UXTerm*foreground: #ffffff
 
 UXTerm*faceName: Ricty:style=Regular
 UXTerm*faceNameDoublesize: Ricty:style=Regular
-UXTerm*faceSize: 10
+UXTerm*faceSize: 8
 !UXTerm*background: black
 !UXTerm*foreground: snow
 
