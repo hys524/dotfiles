@@ -152,9 +152,9 @@ cnoremap ;path echo expand("%:p")
 
 " スワップファイルとバックアップファイル設定
 set swapfile
-set directory=~/.local/
+set directory=~/.local/vim/swp
 set backup
-set backupdir=~/.local/
+set backupdir=~/.local/vim/bak
 
 " カレント行ハイライトON
 set cursorline
