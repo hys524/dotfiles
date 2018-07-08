@@ -26,8 +26,8 @@ set history=100
 colorscheme molokai
 syntax on
 filetype plugin indent on
-let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
-let &t_EI = "\<Esc>]50;CursorShape=0\x7" 
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
+"let &t_EI = "\<Esc>]50;CursorShape=0\x7" 
 
 " 無名レジスタに入るヤンクデータを*レジスタにも入れる
 "set clipboard=unnamedplus
@@ -116,6 +116,7 @@ nnoremap X x
 
 " 検索次候補でカーソルを画面中央に表示
 nnoremap n nzz
+nnoremap N Nzz
 
 " 保存せずに終了
 nnoremap Zq ZQ
@@ -126,14 +127,43 @@ cnoremap ;' wq
 
 " ファイルタイプ変更
 cnoremap ;md set filetype=markdown
+cnoremap ;mm set filetype=
 
 " 文字コード変更
-cnoremap ;utf e ++enc=utf-8
-cnoremap ;sjis e ++enc=shift_jis
-cnoremap ;e e ++enc=uft-8,shift_jis,euc-jp
+cnoremap ;eu e ++enc=utf-8
+cnoremap ;es e ++enc=shift_jis
+cnoremap ;ee e ++enc=shift_jis,uft-8,euc-jp
 
 " vimgrep
-cnoremap ;g vimgrep ?? **/* \| cw
+cnoremap ;g vimgrep ?? **/* \| cw<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+" 置換
+cnoremap ;s %s///gc<Left><Left><Left><Left>
+
+" 新タブ
+cnoremap ;t tabnew
+
+" 保存してからの変更確認
+cnoremap ;ch w !diff % -<Enter>
+
+" ファイル名 OR パス表示
+cnoremap ;name echo expand("%")
+cnoremap ;path echo expand("%:p")
+
+" スワップファイルとバックアップファイル設定
+set swapfile
+set directory=~/.local/
+set backup
+set backupdir=~/.local/
+
+" カレント行ハイライトON
+set cursorline
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+set cursorcolumn
+highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=NONE
+
+" 括弧ハイライトON
+highlight MatchParen ctermfg=NONE ctermbg=red
 
 " VimPlug更新コマンド
 cnoremap pi PlugInstall
@@ -142,4 +172,11 @@ cnoremap pi PlugInstall
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
+Plug 'mkitt/tabline.vim'
 call plug#end()
+
+" Setting - tabline.vim
+hi TabLine     ctermfg=White ctermbg=Black cterm=NONE
+hi TabLineFill ctermfg=White ctermbg=Black cterm=NONE
+hi TabLineSel  ctermfg=Green ctermbg=Black cterm=NONE
+
