@@ -83,8 +83,10 @@ vnoremap ; :
 vnoremap : ;
 
 " 画面スクロールしてもカレット表示位置を動かさない
-nnoremap <C-e> j<C-e>
-nnoremap <C-y> k<C-y>
+nnoremap <Down> j<C-e>
+nnoremap <Up> k<C-y>
+nnoremap <Left> zhh
+nnoremap <Right> zll
 
 " カーソル移動(5行)
 nnoremap <C-h> 5h
@@ -117,6 +119,8 @@ nnoremap X x
 " 検索次候補でカーソルを画面中央に表示
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
 
 " 保存せずに終了
 nnoremap Zq ZQ
@@ -144,7 +148,10 @@ cnoremap ;s %s///gc<Left><Left><Left><Left>
 cnoremap ;t tabnew
 
 " 保存してからの変更確認
-cnoremap ;ch w !diff % -<Enter>
+cnoremap ;cc w !diff % -
+
+" 編集ファイル履歴表示
+cnoremap ;bb browse oldfiles
 
 " ファイル名 OR パス表示
 cnoremap ;name echo expand("%")
