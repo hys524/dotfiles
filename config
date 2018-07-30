@@ -61,10 +61,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -89,8 +89,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout tabbed
-bindsym $mod+Shift+s layout stacked
+bindsym $mod+s layout stacked
+bindsym $mod+Shift+s layout tabbed
 bindsym $mod+e layout toggle split
 #bindsym $mod+w layout tabbed
 #bindsym $mod+Shift+w layout stacked
@@ -192,13 +192,16 @@ popup_during_fullscreen smart
 focus_on_window_activation smart
 
 # bindsym XF86Back exec croutoncycle cros
-bindsym $mod+Tab exec croutoncycle cros
+bindsym $mod+Tab exec --no-startup-id croutoncycle cros
 
 bindsym $mod+1 exec --no-startup-id google-chrome
-bindsym $mod+2 exec --no-startup-id urxvt -e python3 ~/OSS/ranger/ranger.py
+bindsym $mod+2 exec --no-startup-id urxvt -e python3 ~/OSS/ranger/ranger.py ~/Downloads
 bindsym $mod+Shift+1 exec --no-startup-id urxvt -e gkill
 bindsym $mod+Shift+2 exec --no-startup-id urxvt -e sh $HOME/Dropbox/Ubuntu/scripts/vimTemp.sh
 bindsym $mod+Escape exec --no-startup-id urxvt -e htop
+
+bindsym $mod+minus move scratchpad
+bindsym $mod+Shift+minus scratchpad show
 
 exec --no-startup-id fcitx
 exec --no-startup-id clipit
