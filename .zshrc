@@ -23,7 +23,7 @@ bindkey -v
 autoload -U promptinit
 promptinit
 PROMPT="
-${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}
+${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}%?
 ${bg[blue]}%n${reset_color} ${bg[blue]}%m${reset_color} ${bg[blue]}%D${reset_color} ${bg[blue]}%*${reset_color} ${bg[blue]}%d${reset_color}
 %# "
 
@@ -75,7 +75,7 @@ hash -d 0hdd=/media/hys524/NEWHDD2TB1/
 hash -d 0oldhdd=/media/hys524/OLDHDD2TB1/
 
 # Alias
-alias ls='ls -AFx --color=auto --group-directories-first'
+alias ls='ls -AF --color=auto --group-directories-first'
 alias ll="ls -AFGl --color=auto --group-directories-first --block-size=\'1"
 alias llh='ll -h'
 alias k='cd ..'
