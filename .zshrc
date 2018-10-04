@@ -52,6 +52,7 @@ PATH="$PATH:/sbin"
 PATH="$PATH:$HOME/Dropbox/Ubuntu/AppImages"
 PATH="$PATH:$HOME/Dropbox/Ubuntu/scripts"
 PATH="$PATH:$HOME/Dropbox/Ubuntu/bin"
+PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 # Clean up
 trash-empty 14
@@ -108,17 +109,19 @@ alias dbu='dropbox stop'
 alias snote='pushd ~/Dropbox/Simplenote && ll && ls'
 alias bashh='cat ~/Downloads/.downloader/bash_cheat_sheet.txt'
 alias b2c='croutoncycle cros'
+alias ccc='croutoncycle next'
 alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 alias ranger='~/.linuxbrew/bin/ranger'
 alias ran='python3 ~/OSS/ranger/ranger.py'
-alias dropboxStatus='~/Dropbox/Ubuntu/scripts/dropboxStatus.sh 10'
 alias dropboxRestart='dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start'
 alias gita='git add .'
 alias gitc='git commit'
 alias gitf='git fetch -pv'
 alias gitl='git log --graph'
 alias gits='git status'
+alias gitfst='git fetch -pv && git stash save && tig refs'
+alias gitri='git rebase -i HEAD~~'
 alias tigr='tig refs'
 alias tigs='tig status'
 alias op='xdg-open'
@@ -146,6 +149,9 @@ export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-vimto/zsh-vimto.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Cron start
+#sudo /etc/init.d/cron start
 
 # Dropbox start
 dropbox running  
