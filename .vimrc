@@ -23,6 +23,7 @@ set showcmd
 set nowrap
 set wildmenu wildmode=list:full
 set history=100
+set scrolloff=8
 colorscheme molokai
 syntax on
 filetype plugin indent on
@@ -38,7 +39,7 @@ nnoremap <Space><Space> <ESC>
 vnoremap <Space><Space> <Space>
 
 " <Space>s -> 置換
-nnoremap <Space>s :%s///gc
+nnoremap <Space>s :%s///gc<Left><Left><Left><Left>
 
 " <Space>cc -> 1行コメントアウト
 nnoremap <Space>c <S-i>//<ESC>
@@ -122,6 +123,9 @@ nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
 
+" 範囲選択上書きペーストした際の無名レジスタ更新に対処
+nnoremap 0p "0p
+
 " 保存せずに終了
 nnoremap Zq ZQ
 cnoremap ;; q!
@@ -139,13 +143,13 @@ cnoremap ;es e ++enc=shift_jis
 cnoremap ;ee e ++enc=shift_jis,uft-8,euc-jp
 
 " vimgrep
-cnoremap ;g vimgrep ?? **/* \| cw<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+cnoremap ;grep vimgrep ?? **/* \| cw<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " 置換
 cnoremap ;s %s///gc<Left><Left><Left><Left>
 
 " 新タブ
-cnoremap ;t tabnew
+cnoremap ;tt tabnew
 
 " 保存してからの変更確認
 cnoremap ;cc w !diff % -
@@ -156,6 +160,10 @@ cnoremap ;bb browse oldfiles
 " ファイル名 OR パス表示
 cnoremap ;name echo expand("%")
 cnoremap ;path echo expand("%:p")
+
+" Insert/Commandモードにてクリップボードからペースト
+inoremap <C-r><C-r> <C-r>*
+cnoremap <C-r><C-r> <C-r>*
 
 " スワップファイルとバックアップファイル設定
 set swapfile
