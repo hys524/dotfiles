@@ -195,7 +195,8 @@ focus_on_window_activation smart
 bindsym $mod+Tab exec --no-startup-id croutoncycle cros
 
 bindsym $mod+1 exec --no-startup-id google-chrome
-bindsym $mod+2 exec --no-startup-id urxvt -e python3 ~/OSS/ranger/ranger.py ~/Downloads
+#bindsym $mod+2 exec --no-startup-id urxvt -e python3 ~/OSS/ranger/ranger.py ~/Downloads
+bindsym $mod+2 exec --no-startup-id urxvt -e ranger.sh
 bindsym $mod+Shift+1 exec --no-startup-id urxvt -e gkill
 bindsym $mod+Shift+2 exec --no-startup-id urxvt -e sh $HOME/Dropbox/Ubuntu/scripts/vimTemp.sh
 bindsym $mod+Escape exec --no-startup-id urxvt -e htop

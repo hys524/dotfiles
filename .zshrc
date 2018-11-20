@@ -95,7 +95,8 @@ alias jpg2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -n
 alias png2='find ./ -type d \( -name ".Trash\-1000" -o -name ".downloader" -o -name ".magazine" \) -prune -o -type f -not -name "*.png" -print'
 alias upgrade='sudo apt update && sudo apt upgrade'
 alias upgradeDesktop='sudo rm /var/lib/dpkg/lock; sudo rm /var/lib/apt/lists/lock; sudo apt update && sudo apt upgrade && sudo snap refresh'
-alias upgradeCrouton='sudo apt update && sudo apt upgrade && brew update && brew upgrade && notify-send -t 0 -u normal "upgrade finish"'
+#alias upgradeCrouton='sudo apt update && sudo apt upgrade && brew update && brew upgrade && notify-send -t 0 -u normal "upgrade finish"'
+alias upgradeCrouton='sudo apt update && sudo apt upgrade'
 alias tree='tree -a --dirsfirst'
 alias e='exit'
 alias t='trash-put -v'
@@ -142,6 +143,9 @@ alias screenshot='sh ~/Dropbox/Ubuntu/scripts/screenshotAll.sh'
 alias less='/usr/share/vim/vim74/macros/less.sh'
 alias less2='/home/hys524/.linuxbrew/share/vim/vim80/macros/less.sh'
 alias his='less -N ~/.zsh_history'
+alias findcp='echo "find . -name \"*XXX*\" -exec cp -uv {} tmp/ \;"'
+alias findrm='echo "find . -name \"*XXX*\" | xargs rm -v"'
+alias findvim='echo "find . -name \"*XXX*\" | xargs vim -p"'
 
 # Linuxbrew
 PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
