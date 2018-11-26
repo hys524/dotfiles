@@ -140,12 +140,13 @@ alias nethogs='sudo nethogs'
 alias starti3='xiwi -F xinit &'
 alias c='clear'
 alias screenshot='sh ~/Dropbox/Ubuntu/scripts/screenshotAll.sh'
-alias less='/usr/share/vim/vim74/macros/less.sh'
+alias less='/usr/share/vim/vim81/macros/less.sh'
 alias less2='/home/hys524/.linuxbrew/share/vim/vim80/macros/less.sh'
 alias his='less -N ~/.zsh_history'
 alias findcp='echo "find . -name \"*XXX*\" -exec cp -uv {} tmp/ \;"'
 alias findrm='echo "find . -name \"*XXX*\" | xargs rm -v"'
 alias findvim='echo "find . -name \"*XXX*\" | xargs vim -p"'
+alias flatpak='sudo flatpak'
 
 # Linuxbrew
 PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
