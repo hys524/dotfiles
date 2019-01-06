@@ -207,7 +207,7 @@ bindsym $mod+Shift+minus scratchpad show
 exec --no-startup-id fcitx
 exec --no-startup-id clipit
 exec --no-startup-id dunst
-exec --no-startup-id lxinput
+#exec --no-startup-id lxinput
 exec --no-startup-id synclient FingerLow=1 FingerHigh=5
 exec --no-startup-id synclient PalmDetect=1 PalmMinWidth=3
 #exec --no-startup-id ~/.fehbg
