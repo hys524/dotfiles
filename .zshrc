@@ -146,6 +146,7 @@ alias findcp='echo "find . -name \"*XXX*\" -exec cp -uv {} tmp/ \;"'
 alias findrm='echo "find . -name \"*XXX*\" | xargs rm -v"'
 alias findvim='echo "find . -name \"*XXX*\" | xargs vim -p"'
 alias flatpak='sudo flatpak'
+alias venv='source ~/.venv/bin/activate'
 
 # Linuxbrew
 #PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
