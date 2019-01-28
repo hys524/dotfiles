@@ -147,6 +147,8 @@ alias findrm='echo "find . -name \"*XXX*\" | xargs rm -v"'
 alias findvim='echo "find . -name \"*XXX*\" | xargs vim -p"'
 alias flatpak='sudo flatpak'
 alias venv='source ~/.venv/bin/activate'
+alias 7za='7z a -mx=9'
+alias 7zp='7z a -mx=9 -mhe=on -p'
 
 # Linuxbrew
 #PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
