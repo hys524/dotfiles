@@ -24,7 +24,8 @@ set nowrap
 set wildmenu wildmode=list:full
 set history=100
 set scrolloff=8
-colorscheme molokai
+"colorscheme molokai
+colorscheme slate
 syntax on
 filetype plugin indent on
 "let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
@@ -174,8 +175,8 @@ set backupdir=~/.local/vim/bak
 " カレント行ハイライトON
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
-set cursorcolumn
-highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=NONE
+"set cursorcolumn
+"highlight CursorColumn cterm=NONE ctermfg=NONE ctermbg=NONE
 
 " 括弧ハイライトON
 highlight MatchParen ctermfg=NONE ctermbg=red
