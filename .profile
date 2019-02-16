@@ -25,8 +25,8 @@ PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
 trash-empty 3
-dropbox start
+#dropbox start
 
 # Ubuntu make installation of Ubuntu Make binary symlink
-PATH=/home/hys524/.local/share/umake/bin:$PATH
+#PATH=/home/hys524/.local/share/umake/bin:$PATH
 

@@ -114,7 +114,7 @@ alias urall='sh ~/Dropbox/Ubuntu/scripts/unrarAll.sh'
 alias uzall='sh ~/Dropbox/Ubuntu/scripts/unzipAll.sh'
 alias ranger='~/.linuxbrew/bin/ranger'
 alias ran='python3 ~/OSS/ranger/ranger.py'
-alias dropboxRestart='dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start'
+#alias dropboxRestart='dropbox stop && DBUS_SESSION_BUS_ADDRESS="" dropbox start'
 alias gita='git add .'
 alias gitc='git commit'
 alias gitf='git fetch -pv'
@@ -163,13 +163,13 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Cron start
 #sudo /etc/init.d/cron start
 
-# Dropbox start
-dropbox running  
-if [ $? -eq 0 ]; then  
-    dropbox start  
-else  
-    DBUS_SESSION_BUS_ADDRESS="" dropbox status  
-fi  
+## Dropbox start
+#dropbox running  
+#if [ $? -eq 0 ]; then  
+#    dropbox start  
+#else  
+#    DBUS_SESSION_BUS_ADDRESS="" dropbox status  
+#fi  
 
 # Cursor Change by Vim-mode
 #zle-keymap-select () {
