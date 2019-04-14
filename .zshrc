@@ -49,9 +49,14 @@ function chpwd(){ls -pA --color=auto --group-directories-first}
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
-PATH="$PATH:$HOME/Dropbox/Ubuntu/AppImages"
-PATH="$PATH:$HOME/Dropbox/Ubuntu/scripts"
-PATH="$PATH:$HOME/Dropbox/Ubuntu/bin"
+#PATH="$PATH:$HOME/Dropbox/Ubuntu/AppImages"
+#PATH="$PATH:$HOME/Dropbox/Ubuntu/scripts"
+#PATH="$PATH:$HOME/Dropbox/Ubuntu/bin"
+PATH="$PATH:$HOME/AppImages"
+PATH="$PATH:$HOME/AppImage"
+PATH="$PATH:$HOME/scripts"
+PATH="$PATH:$HOME/script"
+PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 # Clean up

@@ -33,9 +33,9 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+Return exec urxvt -e python3 ~/OSS/ranger/ranger.py
+bindsym $mod+Shift+Return exec urxvt -e python3 ~/OSS/ranger/ranger.py $HOME/Downloads
 #bindsym $mod+backslash exec urxvt -e vim
-bindsym $mod+backslash exec urxvt -e sh $HOME/Dropbox/Ubuntu/scripts/vimTemp.sh
+bindsym $mod+backslash exec urxvt -e sh $HOME/script/vimTemp.sh
 
 # kill focused window
 #bindsym $mod+Shift+q kill
@@ -52,7 +52,7 @@ bindsym --release button2 kill
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --term=urxvt
 #bindsym $mod+d exec --no-startup-id rofi -modi combi -show combi -combi-modi window,drun,ssh
-bindsym $mod+d exec --no-startup-id ~/Dropbox/Ubuntu/scripts/rofi.sh
+bindsym $mod+d exec --no-startup-id $HOME/script/rofi.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -195,10 +195,10 @@ focus_on_window_activation smart
 bindsym $mod+Tab exec --no-startup-id croutoncycle cros
 
 bindsym $mod+1 exec --no-startup-id google-chrome
-#bindsym $mod+2 exec --no-startup-id urxvt -e python3 ~/OSS/ranger/ranger.py ~/Downloads
-bindsym $mod+2 exec --no-startup-id urxvt -e ranger.sh
+#bindsym $mod+2 exec --no-startup-id urxvt -e ranger.sh
+bindsym $mod+2 exec --no-startup-id urxvt -e python3 $HOME/OSS/ranger/ranger.py $HOME/Downloads
 bindsym $mod+Shift+1 exec --no-startup-id urxvt -e gkill
-bindsym $mod+Shift+2 exec --no-startup-id urxvt -e sh $HOME/Dropbox/Ubuntu/scripts/vimTemp.sh
+bindsym $mod+Shift+2 exec --no-startup-id urxvt -e sh $HOME/script/vimTemp.sh
 bindsym $mod+Escape exec --no-startup-id urxvt -e htop
 
 bindsym $mod+minus move scratchpad
