@@ -168,9 +168,11 @@ cnoremap <C-r><C-r> <C-r>*
 
 " スワップファイルとバックアップファイル設定
 set swapfile
-set directory=~/.local/vim/swp
+"set directory=~/.local/vim/swp
+set directory=~/.vim/_swp
 set backup
-set backupdir=~/.local/vim/bak
+"set backupdir=~/.local/vim/bak
+set backupdir=~/.vim/_bak
 
 " カレント行ハイライトON
 set cursorline
