@@ -23,7 +23,7 @@ set showcmd
 set nowrap
 set wildmenu wildmode=list:full
 set history=100
-set scrolloff=8
+"set scrolloff=999
 "colorscheme molokai
 colorscheme slate
 syntax on
@@ -90,15 +90,21 @@ nnoremap <Up> k<C-y>
 nnoremap <Left> zhh
 nnoremap <Right> zll
 
+" カーソル移動
+nnoremap j jzz
+nnoremap k kzz
+vnoremap j jzz
+vnoremap k kzz
+
 " カーソル移動(5行)
-nnoremap <C-h> 5h
-vnoremap <C-h> 5h
-nnoremap <C-j> 5j
-vnoremap <C-j> 5j
-nnoremap <C-k> 5k
-vnoremap <C-k> 5k
-nnoremap <C-l> 5l
-vnoremap <C-l> 5l
+nnoremap <C-h> 5hzz
+vnoremap <C-h> 5hzz
+nnoremap <C-j> 5jzz
+vnoremap <C-j> 5jzz
+nnoremap <C-k> 5kzz
+vnoremap <C-k> 5kzz
+nnoremap <C-l> 5lzz
+vnoremap <C-l> 5lzz
 
 " <Space><C-l> -> 再描画(カーソル移動に取られた)
 nnoremap <Space><C-l> <C-l>

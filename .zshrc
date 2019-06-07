@@ -23,6 +23,7 @@ bindkey -v
 autoload -U promptinit
 promptinit
 PROMPT="
+
 ${bg[red]}  ${reset_color}${bg[green]}  ${reset_color}${bg[yellow]}  ${reset_color}${bg[blue]}  ${reset_color}${bg[magenta]}  ${reset_color}${bg[cyan]}  ${reset_color}${bg[white]}  ${reset_color}${bg[black]}  ${reset_color}%?
 ${bg[blue]}%n${reset_color} ${bg[blue]}%m${reset_color} ${bg[blue]}%D${reset_color} ${bg[blue]}%*${reset_color} ${bg[blue]}%d${reset_color}
 %# "
@@ -141,7 +142,7 @@ alias op='xdg-open'
 #alias sftpu='fusermount -u ~/SFTP'
 #alias nasm='sh ~/Dropbox/Ubuntu/scripts/mountNAS.sh'
 #alias nasu='fusermount -u ~/NAS'
-alias gkill='sudo gkill'
+#alias gkill='sudo gkill'
 alias nethogs='sudo nethogs'
 alias starti3='xiwi -F xinit &'
 alias c='clear'
@@ -190,3 +191,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #        fi
 #    fi
 #}
+#
+#chmod 755 ~/AppImages/*
+#chmod 755 ~/bin/*
+#chmod 755 ~/scripts/*.sh
+
