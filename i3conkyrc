@@ -1,0 +1,67 @@
+-- -*- mode: lua; coding: utf-8 -*-
+conky.config = {
+    background = false,
+    max_text_width = 0,
+    out_to_console = true,
+    out_to_x = false,
+    own_window = false,
+    format_human_readable = true,
+
+    -- padding
+    use_spacer = 'left',
+    pad_percents = 3,
+
+    -- Update interval in seconds
+    update_interval = 1.0,
+
+    -- This is the number of times Conky will update before quitting.
+    -- Set to zero to run forever.
+    total_run_times = 0,
+
+    -- Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+    short_units = true,
+
+    -- How strict should if_up be when testing an interface for being up?
+    -- The value is one of up, link or address, to check for the interface
+    -- being solely up, being up and having link or being up, having link
+    -- and an assigned IP address. 
+    if_up_strictness = 'address',
+
+    -- Add spaces to keep things from moving about?  This only affects certain objects.
+    -- use_spacer should have an argument of left, right, or none
+    use_spacer = 'left',
+
+    -- Force UTF8? note that UTF8 support required XFT
+    override_utf8_locale = false,
+
+    -- number of cpu samples to average
+    -- set to 1 to disable averaging
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    diskio_avg_samples = 2,
+};
+
+conky.text = [[
+[
+    { "full_text": "${top name 1}${top cpu 1}%",     "color": "\#FFFFFF", "background": "\#886666" },
+    { "full_text": "${top name 2}${top cpu 2}%",     "color": "\#FFFFFF", "background": "\#886666" },
+    { "full_text": "${top_mem name 1}${top mem 1}%", "color": "\#FFFFFF", "background": "\#666688" },
+    { "full_text": "${top_mem name 2}${top mem 2}%", "color": "\#FFFFFF", "background": "\#666688" },
+    { "full_text": "${cpu}%",                        "color": "\#FFFFFF", "background": "\#660066" },
+    { "full_text": "${cpu cpu1}%",                   "color": "\#FFFFFF", "background": "\#660066" },
+    { "full_text": "${cpu cpu2}%",                   "color": "\#FFFFFF", "background": "\#660066" },
+    { "full_text": "${cpu cpu3}%",                   "color": "\#FFFFFF", "background": "\#660066" },
+    { "full_text": "${cpu cpu4}%",                   "color": "\#FFFFFF", "background": "\#660066" },
+    { "full_text": "u:${upspeed wlan0}",             "color": "\#FFFFFF", "background": "\#003366" },
+    { "full_text": "d:${downspeed wlan0}",           "color": "\#FFFFFF", "background": "\#003366" },
+    { "full_text": "r:${diskio_read}",               "color": "\#FFFFFF", "background": "\#006633" },
+    { "full_text": "w:${diskio_write}",              "color": "\#FFFFFF", "background": "\#006633" },
+    { "full_text": "${mem}/${memmax}",               "color": ${if_match ${memperc} < 90} "\#FFFFFF" ${else} "\#FF3333" ${endif}, "background": "\#006633" },
+    { "full_text": "${swap}/${swapmax}",             "color": ${if_match ${memperc} < 90} "\#FFFFFF" ${else} "\#FF3333" ${endif}, "background": "\#006633" },
+    { "full_text": "${fs_free /}",                   "color": "\#FFFFFF", "background": "\#006633" },
+    { "full_text": "${acpitemp}C",                   "color": "\#FFFFFF", "background": "\#666600" },
+    { "full_text": "${battery}",                     "color": "\#FFFFFF", "background": "\#666600" },
+    { "full_text": "${time %m/%d %a %k:%M:%S}",      "color": "\#FFFFFF", "background": "\#882222" }
+],
+]];
+
