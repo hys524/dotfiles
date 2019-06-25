@@ -61,7 +61,7 @@ PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 # Clean up
-trash-empty 14
+#trash-empty 14
 
 # Key Binding
 bindkey -M viins 'jj' vi-cmd-mode
