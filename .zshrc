@@ -50,15 +50,11 @@ function chpwd(){ls -pA --color=auto --group-directories-first}
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
-#PATH="$PATH:$HOME/Dropbox/Ubuntu/AppImages"
-#PATH="$PATH:$HOME/Dropbox/Ubuntu/scripts"
-#PATH="$PATH:$HOME/Dropbox/Ubuntu/bin"
 PATH="$PATH:$HOME/AppImages"
-#PATH="$PATH:$HOME/AppImage"
 PATH="$PATH:$HOME/scripts"
-#PATH="$PATH:$HOME/script"
 PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+PATH="$PATH:$HOME/go/bin"
 
 # Clean up
 #trash-empty 14
@@ -144,7 +140,7 @@ alias op='xdg-open'
 #alias nasu='fusermount -u ~/NAS'
 #alias gkill='sudo gkill'
 alias nethogs='sudo nethogs'
-alias starti3='xiwi -F xinit &'
+alias starti3='xiwi -F xinit'
 alias c='clear'
 #alias screenshot='sh ~/Dropbox/Ubuntu/scripts/screenshotAll.sh'
 #alias less='/usr/share/vim/vim81/macros/less.sh'
@@ -153,7 +149,7 @@ alias his='less -N ~/.zsh_history'
 alias findcp='echo "find . -name \"*XXX*\" -exec cp -uv {} tmp/ \;"'
 alias findrm='echo "find . -name \"*XXX*\" | xargs rm -v"'
 alias findvim='echo "find . -name \"*XXX*\" | xargs vim -p"'
-alias flatpak='sudo flatpak'
+#alias flatpak='sudo flatpak'
 alias venv='source ~/.venv/bin/activate'
 alias 7za='7z a -mx=9'
 alias 7zp='7z a -mx=9 -mhe=on -p'
@@ -162,6 +158,9 @@ alias 7zp='7z a -mx=9 -mhe=on -p'
 #PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 #export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 #export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
+
+# Go
+export GOPATH=$HOME/go
 
 # Plugin
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

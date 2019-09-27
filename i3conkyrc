@@ -43,10 +43,10 @@ conky.config = {
 
 conky.text = [[
 [
-    { "full_text": "${top name 1}${top cpu 1}%",     "color": "\#FFFFFF", "background": "\#886666" },
-    { "full_text": "${top name 2}${top cpu 2}%",     "color": "\#FFFFFF", "background": "\#886666" },
-    { "full_text": "${top_mem name 1}${top mem 1}%", "color": "\#FFFFFF", "background": "\#666688" },
-    { "full_text": "${top_mem name 2}${top mem 2}%", "color": "\#FFFFFF", "background": "\#666688" },
+    { "full_text": "${top name 1}${top cpu 1}%",     "color": "\#FFFFFF", "background": "\#226644" },
+    { "full_text": "${top name 2}${top cpu 2}%",     "color": "\#FFFFFF", "background": "\#226644" },
+    { "full_text": "${top_mem name 1}${top mem 1}%", "color": "\#FFFFFF", "background": "\#664422" },
+    { "full_text": "${top_mem name 2}${top mem 2}%", "color": "\#FFFFFF", "background": "\#664422" },
     { "full_text": "${cpu}%",                        "color": "\#FFFFFF", "background": "\#660066" },
     { "full_text": "${cpu cpu1}%",                   "color": "\#FFFFFF", "background": "\#660066" },
     { "full_text": "${cpu cpu2}%",                   "color": "\#FFFFFF", "background": "\#660066" },

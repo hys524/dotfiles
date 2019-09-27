@@ -203,6 +203,7 @@ focus_on_window_activation smart
 # floating apps
 for_window [title="CopyQ$"] floating enable
 for_window [title="conky (localhost)"] floating enable
+for_window [title="Jetbrains Toolbox"] floating enable
 
 # bindsym XF86Back exec croutoncycle cros
 bindsym $mod+Tab exec --no-startup-id croutoncycle cros
