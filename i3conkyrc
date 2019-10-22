@@ -41,24 +41,24 @@ conky.config = {
     diskio_avg_samples = 2,
 };
 
+    --{ "full_text": "${top name 2}${top cpu 2}%",     "color": "\#FFFFFF", "background": "\#226644" },
+    --{ "full_text": "${top_mem name 2}${top mem 2}%", "color": "\#FFFFFF", "background": "\#664422" },
 conky.text = [[
 [
+    { "full_text": "u:${upspeed wlan0}",             "color": "\#FFFFFF", "background": "\#003366" },
+    { "full_text": "d:${downspeed wlan0}",           "color": "\#FFFFFF", "background": "\#003366" },
     { "full_text": "${top name 1}${top cpu 1}%",     "color": "\#FFFFFF", "background": "\#226644" },
-    { "full_text": "${top name 2}${top cpu 2}%",     "color": "\#FFFFFF", "background": "\#226644" },
-    { "full_text": "${top_mem name 1}${top mem 1}%", "color": "\#FFFFFF", "background": "\#664422" },
-    { "full_text": "${top_mem name 2}${top mem 2}%", "color": "\#FFFFFF", "background": "\#664422" },
     { "full_text": "${cpu}%",                        "color": "\#FFFFFF", "background": "\#660066" },
     { "full_text": "${cpu cpu1}%",                   "color": "\#FFFFFF", "background": "\#660066" },
     { "full_text": "${cpu cpu2}%",                   "color": "\#FFFFFF", "background": "\#660066" },
     { "full_text": "${cpu cpu3}%",                   "color": "\#FFFFFF", "background": "\#660066" },
     { "full_text": "${cpu cpu4}%",                   "color": "\#FFFFFF", "background": "\#660066" },
-    { "full_text": "u:${upspeed wlan0}",             "color": "\#FFFFFF", "background": "\#003366" },
-    { "full_text": "d:${downspeed wlan0}",           "color": "\#FFFFFF", "background": "\#003366" },
+    { "full_text": "${top_mem name 1}${top mem 1}%", "color": "\#FFFFFF", "background": "\#664422" },
+    { "full_text": "${mem}/${memmax}",               "color": ${if_match ${memperc} < 90} "\#FFFFFF" ${else} "\#FF3333" ${endif}, "background": "\#664422" },
+    { "full_text": "${swap}/${swapmax}",             "color": ${if_match ${memperc} < 90} "\#FFFFFF" ${else} "\#FF3333" ${endif}, "background": "\#664422" },
+    { "full_text": "${fs_free /}",                   "color": "\#FFFFFF", "background": "\#006633" },
     { "full_text": "r:${diskio_read}",               "color": "\#FFFFFF", "background": "\#006633" },
     { "full_text": "w:${diskio_write}",              "color": "\#FFFFFF", "background": "\#006633" },
-    { "full_text": "${mem}/${memmax}",               "color": ${if_match ${memperc} < 90} "\#FFFFFF" ${else} "\#FF3333" ${endif}, "background": "\#006633" },
-    { "full_text": "${swap}/${swapmax}",             "color": ${if_match ${memperc} < 90} "\#FFFFFF" ${else} "\#FF3333" ${endif}, "background": "\#006633" },
-    { "full_text": "${fs_free /}",                   "color": "\#FFFFFF", "background": "\#006633" },
     { "full_text": "${acpitemp}C",                   "color": "\#FFFFFF", "background": "\#666600" },
     { "full_text": "${battery}",                     "color": "\#FFFFFF", "background": "\#666600" },
     { "full_text": "${time %m/%d %a %k:%M:%S}",      "color": "\#FFFFFF", "background": "\#882222" }
